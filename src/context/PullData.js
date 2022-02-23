@@ -35,7 +35,7 @@ export const DataProvider = ({ children }) => {
       data.longitude &&
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/onecall?lat=${data.latitude}&lon=${data.longitude}&exclude=minutely,hourly&units=metric&appid=cf0c77e006c4c312f4a5e1ad91cb4046`
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${data.latitude}&lon=${data.longitude}&exclude=minutely,hourly&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
         )
         .then((res) => setResp(res.data));
   };
